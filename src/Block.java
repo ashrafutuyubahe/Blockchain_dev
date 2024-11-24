@@ -56,25 +56,7 @@ public class Block {
     }
 
 
-     // Check the blockchain's validity
-     public boolean isChainValid() {
-        for (int i = 1; i < blockchain.size(); i++) {
-            Block currentBlock = blockchain.get(i);
-            Block previousBlock = blockchain.get(i - 1);
 
-            // Validate the hash of the current block
-            if (!currentBlock.getBlockHash().equals(currentBlock.calculateBlockHash())) {
-                return false;
-            }
-
-            // Validate the previous block's hash
-            if (!currentBlock.getPrevHash().equals(previousBlock.getBlockHash())) {
-                return false;
-            }
-        }
-        return true;
-    }
-    
     
 
     // getters & setter
