@@ -16,4 +16,10 @@ public class Blockchain {
     public List<Block> getChain(){
         return chain;
     } 
+
+    public void addNewBlock(Block newBlock){
+       newBlock.setPrevHash(chain.get(chain.size()-1).getBlockHash());
+       newBlock.setBLockHash(newBlock.calculateBlockHash());
+        
+    }
 }

@@ -18,10 +18,38 @@ public Block(int index,String data,String prevHash){
     
     }
     
-    private String calculateBlockHash() {
+    public String calculateBlockHash() {
         String input= blockIndex  + prevHash + nonce + data + timeStamps;
 
         return input;
     }
+
+
+
+    //getters & setter
+
+    public String getPrevHash(){
+        return prevHash;
+    }
+
+    public String getBlockHash(){
+        return prevHash;
+    }
+
+   
+
+
+    public void setPrevHash(String newPrevHash){
+        this.prevHash=newPrevHash;
+    }
+
+    public void setBLockHash(String newBlockHash){
+      this.blockHash= newBlockHash;
+    }
+
+
+    
+
+
 
 }
