@@ -22,4 +22,7 @@ public class Blockchain {
        newBlock.setBLockHash(newBlock.calculateBlockHash());
         
     }
+
+
+    
 }
