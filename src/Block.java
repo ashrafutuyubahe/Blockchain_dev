@@ -9,10 +9,11 @@ private String  blockHash;
 private Long timeStamps= new Date().getTime();
 private int nonce;
 
-public Block(int index,String data, String hash,String prevHash){
+public Block(int index,String data,String prevHash){
     this.blockIndex= index;
     this.data= data;
     this.nonce=0;
+    this.prevHash= prevHash;
     this.blockHash= calculateBlockHash();
     
     }
