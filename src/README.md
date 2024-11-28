@@ -82,3 +82,8 @@ Implement additional features like transactions, wallets, or a consensus algorit
 🧑‍💻 Author
 Ashrafu
 A beginner in blockchain development, exploring the fundamental principles behind this revolutionary technology.
+
+# Run it locally!!!!
+
+git clone https://github.com/your-username/blockchain-project.git
+cd blockchain-project
