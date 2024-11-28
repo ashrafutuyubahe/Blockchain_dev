@@ -14,7 +14,7 @@ public class Block {
         this.blockIndex = index;
         this.data = data;
         this.nonce = 0;     
-        this.prevHash = prevHash;
+        this.prevHash = prevHash;  
         this.blockHash = calculateBlockHash();
 
     }
