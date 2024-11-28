@@ -4,7 +4,7 @@ import java.util.List;
 public class Blockchain {
 
     private List<Block> chain;
-    private int difficultLevel;
+    int difficultLevel;
 
     public Blockchain(int difficuly) {
 
@@ -16,22 +16,22 @@ public class Blockchain {
 
 
     public boolean isChainValid() {
-        // Iterate over the chain starting from the second block (index 1)
+       
         for (int i = 1; i < chain.size(); i++) {
-            Block currentBlock = chain.get(i); // Get the current block
-            Block previousBlock = chain.get(i - 1);  // Get the previous block
+            Block currentBlock = chain.get(i); 
+            Block previousBlock = chain.get(i - 1); 
     
-            // Validate the current block's hash by recalculating it
+          
             if (!currentBlock.getBlockHash().equals(currentBlock.calculateBlockHash())) {
-                return false; // If the hashes don't match, the block is invalid
+                return false;
             }
     
-            // Validate the previous block's hash by comparing it with the current block's prevHash
+         
             if (!currentBlock.getPrevHash().equals(previousBlock.getBlockHash())) {
-                return false; // If the previous hashes don't match, the chain is invalid
+                return false;
             }
         }
-        return true; // If all blocks are valid, return true
+        return true; 
     }
     
 

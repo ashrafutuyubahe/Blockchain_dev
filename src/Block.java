@@ -13,7 +13,7 @@ public class Block {
     public Block(int index, String data, String prevHash) {
         this.blockIndex = index;
         this.data = data;
-        this.nonce = 0;
+        this.nonce = 0;     
         this.prevHash = prevHash;
         this.blockHash = calculateBlockHash();
 
@@ -35,8 +35,6 @@ public class Block {
             byte[] hash = sha.digest(
                     input.getBytes("UTF-8"));
 
-            // hexHash will contain
-            // the Hexadecimal hash
             StringBuffer hexHash = new StringBuffer();
 
             while (i < hash.length) {
@@ -55,11 +53,20 @@ public class Block {
 
     }
 
+    public void mineBlock(int difficulty) {
+        String target = new String(new char[difficulty]).replace('\0', '0'); // Create a string of 'difficulty' zeros
+        while (!blockHash.substring(0, difficulty).equals(target)) {
+            nonce++;  // Increment nonce
+            blockHash = calculateBlockHash(); // Recalculate block hash
+        }
+    }
+    
+
 
 
     
 
-    // getters & setter
+ 
 
 
     public String getPrevHash() {
@@ -70,6 +77,12 @@ public class Block {
         return prevHash;
     }
 
+
+    public int  getBlockIndex() {
+        return blockIndex;
+    }
+
+
     public void setPrevHash(String newPrevHash) {
         this.prevHash = newPrevHash;
     }
@@ -77,5 +90,12 @@ public class Block {
     public void setBLockHash(String newBlockHash) {
         this.blockHash = newBlockHash;
     }
+
+    public String getData() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getData'");
+    }
+
+
 
 }
