@@ -54,10 +54,10 @@ public class Block {
     }
 
     public void mineBlock(int difficulty) {
-        String target = new String(new char[difficulty]).replace('\0', '0'); // Create a string of 'difficulty' zeros
+        String target = new String(new char[difficulty]).replace('\0', '0'); 
         while (!blockHash.substring(0, difficulty).equals(target)) {
-            nonce++;  // Increment nonce
-            blockHash = calculateBlockHash(); // Recalculate block hash
+            nonce++;  
+            blockHash = calculateBlockHash(); 
         }
     }
     
