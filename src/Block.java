@@ -53,6 +53,8 @@ public class Block {
 
     }
 
+    
+
     public void mineBlock(int difficulty) {
         String target = new String(new char[difficulty]).replace('\0', '0'); 
         while (!blockHash.substring(0, difficulty).equals(target)) {
