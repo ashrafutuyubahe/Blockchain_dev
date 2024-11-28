@@ -92,8 +92,7 @@ public class Block {
     }
 
     public String getData() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getData'");
+        return  data;
     }
 
 
